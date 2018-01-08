@@ -1,0 +1,32 @@
+PODS:
+  - Alamofire (4.5.1)
+  - GCDKit (2.1.0)
+  - Realm (3.0.2):
+    - Realm/Headers (= 3.0.2)
+  - Realm/Headers (3.0.2)
+  - RealmSwift (3.0.2):
+    - Realm (= 3.0.2)
+  - SimpleAlert (2.1.0)
+  - SwiftHEXColors (1.1.0)
+  - SwiftyJSON (4.0.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - GCDKit
+  - RealmSwift
+  - SimpleAlert
+  - SwiftHEXColors
+  - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  GCDKit: 321b439175c22e31fffb58dfc20078bf58ba4c60
+  Realm: 6f23fd1f178a09342eac21bfa7c2bf4312a7a180
+  RealmSwift: 695393add1b8f9d5fa75dd16e6355cf3935f71e2
+  SimpleAlert: 12f244316f0cf4453098d04813b650a64a7c572b
+  SwiftHEXColors: 8f7e364df7929e32cff9f9eeb044bb215167d6be
+  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
+
+PODFILE CHECKSUM: c47bd4dcfd1a9400d92b9cc1664cddf9d53f18a0
+
+COCOAPODS: 1.3.1
