@@ -13,8 +13,11 @@ import SwiftSpinner
 
 class CategoryViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, NetworkManagerDelegate {
     
+    
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     var categories : Results<Category>?
+    var index : NSInteger = 0
+    var networkManager = NetworkManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +46,6 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
         categories = Utilities.loadCategoryFromLocal()
         if let categories = categories{
             if categories.count == 0 {
-                let networkManager = NetworkManager()
                 networkManager.delegate = self
                 SwiftSpinner.show("Get Categories...")
                 networkManager.getCategory()
@@ -53,7 +55,7 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
         }
     }
     
-    func dataReceived(data: Any?, error: NSError?) {
+    func dataCategoryReceived(data: Any?, error: NSError?) {
         SwiftSpinner.hide()
         if error != nil {
             print("Error: \(error as Optional)")
@@ -66,6 +68,32 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
         let json = JSON(data)
         categories = Utilities.loadCategoryFromJSON(json: json)
         categoryCollectionView.reloadData()
+    }
+    
+    func dataQuestionsReceived(data: Any?, error: NSError?) {
+        SwiftSpinner.hide()
+        if error != nil {
+            print("Error: \(error as Optional)")
+        }
+        
+        guard let data = data else {
+            print("Error: No data")
+            return
+        }
+        let json = JSON(data)
+        let questions = Utilities.loadQuestionsFromJSON(json: json)
+        print(questions.count)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc : QuestionViewController = storyboard.instantiateViewController(withIdentifier: "QuestionViewController") as! QuestionViewController
+        
+         if let categories = categories{
+            let category = categories[index]
+            vc.titleCategory = category.name
+            let defaults = UserDefaults.standard
+            defaults.set(1, forKey: "CurrentNumber")
+            vc.currentNumber = 1;
+        }
+        navigationController?.pushViewController(vc,animated: true )
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -85,6 +113,16 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
         }
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let categories = categories{
+            SwiftSpinner.show("Get Questions...")
+            let category = categories[indexPath.row]
+            networkManager.delegate = self
+            networkManager.getQuestions(category: Int(category.id)!)
+        }
+        
     }
     
     

@@ -10,11 +10,12 @@ import Foundation
 import Alamofire
 
 protocol NetworkManagerDelegate {
-    func dataReceived(data: Any?, error: NSError?)
+    func dataCategoryReceived(data: Any?, error: NSError?)
+    func dataQuestionsReceived(data: Any?, error: NSError?)
 }
 
 class NetworkManager: NSObject {
-    let baseURLString: String = "https://opentdb.com/"
+    let baseURLString: String = "https://opentdb.com"
     var baseURLWithAPIKeyString: String
     var delegate: NetworkManagerDelegate?
     
@@ -24,16 +25,32 @@ class NetworkManager: NSObject {
     }
     
     func getCategory() {
-        let requestURL: String = "\(baseURLWithAPIKeyString)api_category.php/"
+        let requestURL: String =  "\(baseURLWithAPIKeyString)/api_category.php/"
         Alamofire.request(requestURL).responseJSON { (response) in
             switch response.result {
             case .success:
                 guard let json = response.result.value else {
                     return
                 }
-                self.delegate?.dataReceived(data: json, error: nil)
+                self.delegate?.dataCategoryReceived(data: json, error: nil)
             case .failure(let error):
-                self.delegate?.dataReceived(data: nil, error: error as NSError)
+                self.delegate?.dataCategoryReceived(data: nil, error: error as NSError)
+            }
+        }
+    }
+    
+    func getQuestions(category:Int) {
+        let requestURL: String = "\(baseURLWithAPIKeyString)api.php?amount=20&category=\(category)&difficulty=easy&type=multiple"
+        print(requestURL)
+        Alamofire.request(requestURL).responseJSON { (response) in
+            switch response.result {
+            case .success:
+                guard let json = response.result.value else {
+                    return
+                }
+                self.delegate?.dataQuestionsReceived(data: json, error: nil)
+            case .failure(let error):
+                self.delegate?.dataQuestionsReceived(data: nil, error: error as NSError)
             }
         }
     }
