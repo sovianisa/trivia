@@ -9,4 +9,5 @@ target 'trivia' do
   pod 'RealmSwift'
   pod 'GCDKit'
   pod 'Alamofire'
+  pod 'SwiftSpinner'
 end

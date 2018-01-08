@@ -8,23 +8,33 @@
 
 /* Begin PBXBuildFile section */
 		0B398FC12003AE9D002B5480 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B398FC02003AE9D002B5480 /* AppDelegate.swift */; };
-		0B398FC32003AE9D002B5480 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B398FC22003AE9D002B5480 /* ViewController.swift */; };
 		0B398FC62003AE9D002B5480 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B398FC42003AE9D002B5480 /* Main.storyboard */; };
 		0B398FC92003AE9D002B5480 /* trivia.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0B398FC72003AE9D002B5480 /* trivia.xcdatamodeld */; };
 		0B398FCB2003AE9D002B5480 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B398FCA2003AE9D002B5480 /* Assets.xcassets */; };
 		0B398FCE2003AE9D002B5480 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B398FCC2003AE9D002B5480 /* LaunchScreen.storyboard */; };
+		0B398FD82003B8B0002B5480 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B398FD72003B8B0002B5480 /* CategoryViewController.swift */; };
+		0B398FDA2003B908002B5480 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B398FD92003B908002B5480 /* CategoryCollectionViewCell.swift */; };
+		0B398FDC2003B96E002B5480 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B398FDB2003B96E002B5480 /* Category.swift */; };
+		0B398FE32003C5CD002B5480 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B398FE12003C5CC002B5480 /* Utilities.swift */; };
+		0B398FE42003C5CD002B5480 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B398FE22003C5CC002B5480 /* NetworkManager.swift */; };
+		0BE881822003E9C600B0D250 /* CustomImageFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE881812003E9C600B0D250 /* CustomImageFlowLayout.swift */; };
 		636BBB66B20CA8056DDB0784 /* Pods_trivia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60604A9B54549DEDEC7F4CC6 /* Pods_trivia.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0B398FBD2003AE9D002B5480 /* trivia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = trivia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B398FC02003AE9D002B5480 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0B398FC22003AE9D002B5480 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0B398FC52003AE9D002B5480 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0B398FC82003AE9D002B5480 /* trivia.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = trivia.xcdatamodel; sourceTree = "<group>"; };
 		0B398FCA2003AE9D002B5480 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0B398FCD2003AE9D002B5480 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0B398FCF2003AE9D002B5480 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0B398FD72003B8B0002B5480 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		0B398FD92003B908002B5480 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		0B398FDB2003B96E002B5480 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		0B398FE12003C5CC002B5480 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		0B398FE22003C5CC002B5480 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		0BE881812003E9C600B0D250 /* CustomImageFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImageFlowLayout.swift; sourceTree = "<group>"; };
 		60604A9B54549DEDEC7F4CC6 /* Pods_trivia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_trivia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D72CA66AF25FDAD487B4FAE4 /* Pods-trivia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trivia.debug.xcconfig"; path = "Pods/Target Support Files/Pods-trivia/Pods-trivia.debug.xcconfig"; sourceTree = "<group>"; };
 		EBDB6549C45177D1E49F56D9 /* Pods-trivia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trivia.release.xcconfig"; path = "Pods/Target Support Files/Pods-trivia/Pods-trivia.release.xcconfig"; sourceTree = "<group>"; };
@@ -63,8 +73,9 @@
 		0B398FBF2003AE9D002B5480 /* trivia */ = {
 			isa = PBXGroup;
 			children = (
+				0B398FE02003C5BB002B5480 /* Global */,
+				0B398FD62003B890002B5480 /* Category Page */,
 				0B398FC02003AE9D002B5480 /* AppDelegate.swift */,
-				0B398FC22003AE9D002B5480 /* ViewController.swift */,
 				0B398FC42003AE9D002B5480 /* Main.storyboard */,
 				0B398FCA2003AE9D002B5480 /* Assets.xcassets */,
 				0B398FCC2003AE9D002B5480 /* LaunchScreen.storyboard */,
@@ -72,6 +83,26 @@
 				0B398FC72003AE9D002B5480 /* trivia.xcdatamodeld */,
 			);
 			path = trivia;
+			sourceTree = "<group>";
+		};
+		0B398FD62003B890002B5480 /* Category Page */ = {
+			isa = PBXGroup;
+			children = (
+				0B398FD72003B8B0002B5480 /* CategoryViewController.swift */,
+				0BE881812003E9C600B0D250 /* CustomImageFlowLayout.swift */,
+				0B398FD92003B908002B5480 /* CategoryCollectionViewCell.swift */,
+				0B398FDB2003B96E002B5480 /* Category.swift */,
+			);
+			path = "Category Page";
+			sourceTree = "<group>";
+		};
+		0B398FE02003C5BB002B5480 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				0B398FE22003C5CC002B5480 /* NetworkManager.swift */,
+				0B398FE12003C5CC002B5480 /* Utilities.swift */,
+			);
+			path = Global;
 			sourceTree = "<group>";
 		};
 		70468E396921B7B335355711 /* Frameworks */ = {
@@ -193,6 +224,7 @@
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SimpleAlert/SimpleAlert.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftHEXColors/SwiftHEXColors.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftSpinner/SwiftSpinner.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -203,6 +235,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SimpleAlert.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftHEXColors.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSpinner.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -232,8 +265,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BE881822003E9C600B0D250 /* CustomImageFlowLayout.swift in Sources */,
+				0B398FDA2003B908002B5480 /* CategoryCollectionViewCell.swift in Sources */,
+				0B398FDC2003B96E002B5480 /* Category.swift in Sources */,
+				0B398FE32003C5CD002B5480 /* Utilities.swift in Sources */,
 				0B398FC92003AE9D002B5480 /* trivia.xcdatamodeld in Sources */,
-				0B398FC32003AE9D002B5480 /* ViewController.swift in Sources */,
+				0B398FE42003C5CD002B5480 /* NetworkManager.swift in Sources */,
+				0B398FD82003B8B0002B5480 /* CategoryViewController.swift in Sources */,
 				0B398FC12003AE9D002B5480 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

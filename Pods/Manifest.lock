@@ -8,6 +8,7 @@ PODS:
     - Realm (= 3.0.2)
   - SimpleAlert (2.1.0)
   - SwiftHEXColors (1.1.0)
+  - SwiftSpinner (1.5.0)
   - SwiftyJSON (4.0.0)
 
 DEPENDENCIES:
@@ -16,6 +17,7 @@ DEPENDENCIES:
   - RealmSwift
   - SimpleAlert
   - SwiftHEXColors
+  - SwiftSpinner
   - SwiftyJSON
 
 SPEC CHECKSUMS:
@@ -25,8 +27,9 @@ SPEC CHECKSUMS:
   RealmSwift: 695393add1b8f9d5fa75dd16e6355cf3935f71e2
   SimpleAlert: 12f244316f0cf4453098d04813b650a64a7c572b
   SwiftHEXColors: 8f7e364df7929e32cff9f9eeb044bb215167d6be
+  SwiftSpinner: 4c058c7a1d6b444dd2e1d70988ead40783097133
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: c47bd4dcfd1a9400d92b9cc1664cddf9d53f18a0
+PODFILE CHECKSUM: 2f4a92731d13b6762811b4eede07fef11f9c31fb
 
 COCOAPODS: 1.3.1
