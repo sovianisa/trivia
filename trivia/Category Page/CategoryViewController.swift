@@ -10,6 +10,7 @@ import UIKit
 import RealmSwift
 import SwiftyJSON
 import SwiftSpinner
+import GCDKit
 
 class CategoryViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, NetworkManagerDelegate {
     
@@ -81,19 +82,26 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
             return
         }
         let json = JSON(data)
-        let questions = Utilities.loadQuestionsFromJSON(json: json)
-        print(questions.count)
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc : QuestionViewController = storyboard.instantiateViewController(withIdentifier: "QuestionViewController") as! QuestionViewController
         
-         if let categories = categories{
-            let category = categories[index]
-            vc.titleCategory = category.name
-            let defaults = UserDefaults.standard
-            defaults.set(1, forKey: "CurrentNumber")
-            vc.currentNumber = 1;
+        GCDQueue.default.async {
+            let questions = Utilities.loadQuestionsFromJSON(json: json)
+            print(questions.count)
+            
+            }.notify(.main) {
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc : QuestionViewController = storyboard.instantiateViewController(withIdentifier: "QuestionViewController") as! QuestionViewController
+                
+                if let categories = self.categories{
+                    let category = categories[self.index]
+                    vc.titleCategory = category.name
+                    let defaults = UserDefaults.standard
+                    defaults.set(1, forKey: "CurrentNumber")
+                    defaults.set(0, forKey: "RecapCorrectAnswer")
+                    vc.currentNumber = 1;
+                }
+                self.navigationController?.pushViewController(vc,animated: true )
         }
-        navigationController?.pushViewController(vc,animated: true )
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -118,12 +126,14 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let categories = categories{
             SwiftSpinner.show("Get Questions...")
-            let category = categories[indexPath.row]
+            index = indexPath.row
+            let category = categories[index]
             networkManager.delegate = self
             networkManager.getQuestions(category: Int(category.id)!)
         }
         
     }
+    
     
     
 }

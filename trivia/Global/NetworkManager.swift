@@ -40,7 +40,9 @@ class NetworkManager: NSObject {
     }
     
     func getQuestions(category:Int) {
-        let requestURL: String = "\(baseURLWithAPIKeyString)api.php?amount=20&category=\(category)&difficulty=easy&type=multiple"
+        
+        let numbers :(Int) = Utilities.numberOfQuestions()
+        let requestURL: String = "\(baseURLWithAPIKeyString)api.php?amount=\(numbers)&category=\(category)&difficulty=easy&type=multiple"
         print(requestURL)
         Alamofire.request(requestURL).responseJSON { (response) in
             switch response.result {

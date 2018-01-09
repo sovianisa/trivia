@@ -17,6 +17,18 @@ class Utilities {
         return UIColor(hexString: "#9012fe")!
     }
     
+    class func rightColor() -> UIColor {
+        return UIColor(hexString: "#50e3c2")!
+    }
+    
+    class func wrongColor() -> UIColor {
+        return UIColor(hexString: "#fb4040")!
+    }
+    
+    class func numberOfQuestions() -> Int {
+        return 20
+    }
+    
     class func loadCategoryFromJSON(json: JSON) -> Results<Category> {
         
         let realm = try! Realm()
@@ -77,7 +89,19 @@ class Utilities {
                     return realm.objects(Question.self)
             }
             
-            let question =  Question(value: [quest,a,b,c,d, correct,""])
+            let n = Int(arc4random_uniform(3))
+            var question = Question()
+            if (n == 0) {
+                question = Question(value: [quest,a,b,c,d, correct,""])
+            } else if (n == 1){
+                question = Question(value: [quest,b,a,c,d, correct,""])
+            } else if (n == 1){
+                question = Question(value: [quest,b,c,a,d, correct,""])
+            } else {
+                question = Question(value: [quest,b,c,d,a, correct,""])
+            }
+            
+            
             try! realm.write {
                 realm.add(question)
             }
@@ -97,6 +121,26 @@ class Utilities {
         let realm = try! Realm()
         return realm.objects(Question.self)
         
+    }
+    
+    class func addLineView(views : UIView, color:UIColor) {
+        views.layer.borderWidth = 1;
+        views.layer.borderColor = color.cgColor
+    }
+    
+    class func viewRightColor (views: UIView) {
+        views.backgroundColor = rightColor()
+        views.layer.borderColor = rightColor().cgColor
+    }
+    
+    class func viewWrongColor (views: UIView) {
+        views.backgroundColor = wrongColor()
+        views.layer.borderColor = wrongColor().cgColor
+    }
+    
+    class func viewNormalColor (views: UIView) {
+        views.backgroundColor = UIColor.white
+        views.layer.borderColor = UIColor.black.cgColor
     }
 }
 
